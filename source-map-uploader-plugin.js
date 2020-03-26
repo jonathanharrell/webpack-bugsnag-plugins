@@ -93,10 +93,10 @@ class BugsnagSourceMapUploaderPlugin {
 
     if (compiler.hooks) {
       // webpack v4
-      compiler.hooks.afterEmit.tapAsync('BugsnagSourceMapUploaderPlugin', plugin)
+      compiler.hooks.afterCompile.tapAsync('BugsnagSourceMapUploaderPlugin', plugin)
     } else {
       // webpack v3
-      compiler.plugin('after-emit', plugin)
+      compiler.plugin('after-compile', plugin)
     }
   }
 
